@@ -7,7 +7,7 @@ if [ -z $1 ]; then
 fi
 
 if [ -f "${1}.py" ]; then
-    echo "[Skip] ${1}.hs exists already"
+    echo "[Skip] ${1}.py exists already"
 else
 	cat << EOF >> "${1}.py"
 #!/usr/bin/python3
@@ -30,5 +30,5 @@ if __name__ == "__main__":
     unittest.main()
 EOF
 	chmod u+x ${1}.py
-    echo "[+] ${1}.hs is created"
+    echo "[+] ${1}.py is created"
 fi
